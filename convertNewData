@@ -1,0 +1,4 @@
+for i=1:5
+    [pose] = convertStructData(num);
+    save(['robot_', i,'.mat'], pose);
+end

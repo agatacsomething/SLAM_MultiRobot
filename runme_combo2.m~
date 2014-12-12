@@ -1,0 +1,40 @@
+% 5:-6, 2:14, 3:7, 1:21
+%load('rob4_log_prob2.mat');
+
+tic
+% [log_prob_45] = buildMapGeneral3(1900,5,blank_log_prob, robot,-.6);
+% 
+% [log_prob_2] = buildMapGeneral3(1900,4,log_prob_45, robot,0);
+
+num=1
+tic
+[log_prob_5v4] = buildMapGeneral4(1900,5,blank_log_prob, robot,-0.6,0);
+toc
+
+num=2
+tic
+[log_prob_54v4] = buildMapGeneral4(1900,4,log_prob_5v4, robot,0,0);
+toc 
+
+num=3
+tic
+[log_prob_542v4] = buildMapGeneral4(1600,2,log_prob_54v4, robot,1.4,0);
+toc
+
+num=4
+tic
+[log_prob_5423v4] = buildMapGeneral4(1900,3,log_prob_542v4, robot,0.7,0);
+toc
+
+num=5
+tic
+[log_prob_54231v4] = buildMapGeneral4(1900,1,log_prob_5423v4, robot,2.1,0);
+toc
+
+toc
+
+here= mat2gray(log_prob_45231);
+figure, imshow(here); title('log_prob_45231v4')
+
+load handel
+sound(y,Fs)

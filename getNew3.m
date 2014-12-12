@@ -1,0 +1,1 @@
+[x, y] = getMapCellsFromRay(3, 4, 5, 9)

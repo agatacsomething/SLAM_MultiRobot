@@ -1,0 +1,14 @@
+   xis=robot{1}.packet{1}.hlidar.xs;
+   yis=robot{1}.packet{1}.hlidar.ys;
+
+for i=2:500
+   xis2=robot{1}.packet{i}.hlidar.xs;
+   yis2=robot{1}.packet{i}.hlidar.ys;
+   
+   xis=[xis; xis2];
+   yis=[yis; yis2];
+   
+   
+end
+
+figure; scatter(xis, yis)
